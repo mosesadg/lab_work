@@ -1,0 +1,77 @@
+<html>
+<head>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
+    <script src="bower_components/backbone/backbone-min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/backbone/routers/grumble.js"></script>
+    <script src="js/backbone/models/comment.js"></script>
+    <script src="js/backbone/models/grumble.js"></script>
+    <script src="js/backbone/collections/comments.js"></script>
+    <script src="js/backbone/collections/grumbles.js"></script>
+    <script src="js/backbone/views/comment.js"></script>
+    <script src="js/backbone/views/grumble.js"></script>
+    <script src="js/backbone/views/grumbleList.js"></script>
+    <script src="js/backbone/views/grumbleCreate.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <h1>Grumblr</h1>
+
+    <div id="createGrumble">
+      <button class="new">New Grumble</button>
+      <div class="formContainer"></div>
+    </div>
+
+    <div id="grumbles">
+    </div>
+
+    <script id="grumbleTemplate" type="text/x-handlebars-template">
+        <h2>{{ title }} <span class='delete'>(X)</span></h2>
+        by: {{ authorName }}
+        <p>
+          {{ content }}
+        </p>
+        <img src="{{ photoUrl }}" alt="">
+        <button class="edit">Update Grumble</button>
+        <form class="commentForm">
+          <label>Author Name:</label>
+          <input type="text" name="authorName">
+          <label>Content:</label>
+          <input type="text" name="content">
+          <button>Submit</button>
+        </form>
+        <div class="comments"></div>
+      </script>
+
+      <script id="grumbleFormTemplate" type="text/x-handlebars-template">
+   <form class="grumbleForm">
+     <input type="text" name="title" value="{{ title }}">
+     by: <input type="text" name="authorName" value="{{ authorName }}">
+     <textarea name="content">{{ content }}</textarea>
+     <img src="{{ photoUrl }}" alt="">
+     <input type="text" name="photoUrl" value="{{ photoUrl }}">
+     <button class="submit">Submit</button>
+     <button class="cancel">Cancel</button>
+   </form>
+ </script>
+
+ <script id="commentTemplate" type="text/x-handlebars-template">
+     <span>by: {{ authorName }}</span>
+     <div>{{ content }}</div>
+     <button class="deleteComment">Delete</button>
+ </script>
+
+
+</body>
+
+
+
+
+
+
+</html>

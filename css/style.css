@@ -1,0 +1,26 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  padding-top: 0;
+}
+
+input {
+  display: block;
+  width: 40rem;
+}
+textarea {
+  display: block;
+  width: 40rem;
+}
+
+.comments {
+
+}
+
+.comment {
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em;
+}
